@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease-in-out;
+}
+.container {
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  animation: popIn 0.8s ease forwards;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  animation: slideDown 0.6s ease;
+}
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  animation: slideUp 0.6s ease;
+}
+input[type="text"] {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+input[type="text"]:focus {
+  transform: scale(1.05);
+}
+button {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+  background-color: #16a085;
+  transform: scale(1.05);
+}
+ul {
+  list-style-type: none;
+  max-height: 250px;
+  overflow-y: auto;
+  animation: fadeIn 1s ease;
+}
+li {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  transform: scale(1);
+}
+li:hover {
+  transform: scale(1.02);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+li.completed {
+  text-decoration: line-through;
+  color: #ddd;
+  opacity: 0.6;
+}
+li span {
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: left;
+}
+li button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+li button:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
